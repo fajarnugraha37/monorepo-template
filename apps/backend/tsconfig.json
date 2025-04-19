@@ -1,5 +1,5 @@
 {
-  "extends": "./node_modules/type-def/tsconfig.backend.json",
+  "extends": "./node_modules/@packages/type-def/tsconfig.backend.json",
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",

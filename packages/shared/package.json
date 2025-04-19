@@ -1,29 +1,19 @@
 {
-  "name": "@packages/type-def",
+  "name": "@packages/shared",
   "version": "0.0.1",
-  "description": "Global Type Definition for project_name",
+  "description": "Shared ulitity",
   "private": true,
   "type": "module",
-  "keywords": [
-    "types",
-    ".d.ts"
-  ],
   "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "devDependencies": {
-    "@types/node": "^22.14.1",
+    "@packages/type-def": "workspace:*",
     "rimraf": "^6.0.1",
     "typescript": "^5.6.3"
   },
   "scripts": {
     "build": "rimraf dist && tsc"
-  },
-  "directories": {
-    "consts": "./src/consts",
-    "enums": "./src/enums",
-    "interfaces": "./src/interfaces",
-    "types": "./src/types"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

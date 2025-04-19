@@ -1,12 +1,14 @@
 import 'module-alias/register.js';
 
 import express, { Application } from 'express';
+import { helloWorld } from '@packages/shared';
 
 const app: Application = express();
 
 app.use(express.json());
 
 app.get('/', (req, res) => {
+  helloWorld();
   res.send('Hello World!');
 });
 
