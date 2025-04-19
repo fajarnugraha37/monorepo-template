@@ -1,18 +1,21 @@
-import 'module-alias/register.js';
+import { z } from 'zod';
 
-import express, { Application } from 'express';
 import { helloWorld } from '@packages/shared';
+import { router, publicProcedure } from './trpc.js';
 
-const app: Application = express();
+export const appRouter = router({
+  greeting: publicProcedure
+    .input(z.object({ name: z.string() }))
+    .query((opts) => {
+      const { input } = opts;
 
-app.use(express.json());
-
-app.get('/', (req, res) => {
-  helloWorld();
-  res.send('Hello World!');
+      return `Hello ${input.name}` as const;
+    }),
+  helloWorld: publicProcedure.query(() => {
+    helloWorld();
+    return Date.now().toString();
+  }),
 });
 
-const port = process.env.PORT || 4000;
-app.listen(port, () => {
-  console.log(`Server Listening on port ${port}`);
-});
+// export type definition of API
+export type AppRouter = typeof appRouter;
