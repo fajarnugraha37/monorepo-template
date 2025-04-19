@@ -1,0 +1,30 @@
+{
+  "name": "type-def",
+  "version": "0.0.1",
+  "description": "Global Type Definition for project_name",
+  "private": true,
+  "type": "module",
+  "keywords": [
+    "types",
+    ".d.ts"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "typescript": "~5.6.2"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc"
+  },
+  "directories": {
+    "consts": "./src/consts",
+    "enums": "./src/enums",
+    "interfaces": "./src/interfaces",
+    "types": "./src/types"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

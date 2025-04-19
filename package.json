@@ -9,6 +9,7 @@
     "format": "prettier --write .",
     "prepare": "husky",
     "common": "pnpm --filter common",
+    "type-def": "pnpm --filter type-def",
     "app": "pnpm --filter web-app",
     "backend": "pnpm --filter backend"
   },

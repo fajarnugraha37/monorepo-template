@@ -7,10 +7,12 @@
   "types": "./dist/main.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "rimraf ditst && tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "rimraf": "^6.0.1",
+    "type-def": "workspace:*",
     "typescript": "~5.6.2",
     "vite": "^5.4.10",
     "vite-plugin-dts": "^4.3.0"
